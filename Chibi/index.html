@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    
+    <title>Chibi Example</title>
+    
+    <link rel="stylesheet" href="chibi.css" type="text/css" />
+    <link rel="stylesheet" href="app.css" type="text/css" />
+
+    <style type="text/css">
+        #console {
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        #console > div {
+            border-top: 1px solid #dedede;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        #input {
+        }
+
+        #console > div.echo {
+            color: #8e8e8e;
+            font-style: italic;
+        }
+
+        #console > div.result {
+            color: #0094ff;
+        }
+
+        #console > div.error {
+            color: #ff0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chibi Example</h1>
+    
+    <div id="console">
+        <div id="input" contenteditable="true"></div>
+    </div>
+
+    <script src="Scripts/jquery-1.9.0.js"></script>
+
+    <script src="chibi.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

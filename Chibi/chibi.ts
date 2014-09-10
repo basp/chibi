@@ -11,8 +11,7 @@
         var cmd, echo, output, result;
 
         if (event.which === BACKSPACE &&
-            // Prevent backspacing beyond the prompt;
-            // this is about the least we can do.
+            // Prevent backspacing beyond the prompt
             this.innerHTML.length === prompt.length) {
             event.preventDefault();
         }

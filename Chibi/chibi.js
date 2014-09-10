@@ -10,24 +10,20 @@
     $input.keydown(function (event) {
         var cmd, echo, output, result;
 
-        if (event.which === BACKSPACE &&
-            // Prevent backspacing beyond the prompt;
-            // this is about the least we can do.
-            this.innerHTML.length === prompt.length) {
+        if (event.which === BACKSPACE && this.innerHTML.length === prompt.length) {
             event.preventDefault();
         }
 
         if (event.which === ENTER) {
-            cmd = this.innerHTML.substr(prompt.length)
+            cmd = this.innerHTML.substr(prompt.length);
             echo = '<div class="echo"><span>&gt;</span> ' + cmd + '</div>';
             output, result;
 
             $(echo).insertBefore($input);
-            try {
+            try  {
                 result = eval(cmd);
                 output = '<div class="result"><span>&lt;</span> ' + result + '</div>';
-            }
-            catch (error) {
+            } catch (error) {
                 output = '<div class="error">' + error + '</div>';
             }
 
@@ -36,4 +32,5 @@
             event.preventDefault();
         }
     });
-}); 
+});
+//# sourceMappingURL=chibi.js.map

@@ -35,14 +35,6 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\lodash\lodash.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

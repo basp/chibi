@@ -8,14 +8,16 @@
 
     $input.append(prompt);
     $input.keydown(function (event) {
+        var cmd, echo, output, result;
+
         if (event.which === BACKSPACE && this.innerHTML.length === prompt.length) {
             event.preventDefault();
         }
 
         if (event.which === ENTER) {
-            var cmd = this.innerHTML.substr(prompt.length);
-            var echo = '<div class="echo"><span>&gt;</span> ' + cmd + '</div>';
-            var output, result;
+            cmd = this.innerHTML.substr(prompt.length);
+            echo = '<div class="echo"><span>&gt;</span> ' + cmd + '</div>';
+            output, result;
 
             $(echo).insertBefore($input);
             try  {

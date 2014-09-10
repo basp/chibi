@@ -1,4 +1,4 @@
 chibi
 =====
 
-Tiny DOM injectable JavaScript REPL
+Tiny DOM-injectable JavaScript REPL

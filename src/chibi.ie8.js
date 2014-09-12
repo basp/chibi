@@ -11,32 +11,33 @@
         var history = [],
             i = -1;
 
-        $prompt = $('<div>').addClass('chibi-prompt')
+        $prompt = $('<div>').addClass('chibi chibi-prompt')
             .css('float', 'left')
                    .append('&gt;&nbsp');
 
-        $cmd = $('<div>').addClass('chibi-command')
+        $cmd = $('<div>').addClass('chibi chibi-command')
             .attr('contenteditable', 'true');
 
-        $input = $('<div>').addClass('chibi-input')
+        $input = $('<div>').addClass('chibi chibi-input')
             .append($prompt)
             .append($cmd);
 
         function onEnter(event) {
             var src, result, echo, $rprompt, output;
             event.preventDefault();
+            // We *have* to get `innerText` explicitly here
             src = $cmd.get(0).innerText;
-            echo = '<div class="echo"><span>&gt;</span> ' + src + '</div>';
+            echo = '<div class="chibi chibi-echo"><span>&gt;</span> ' + src + '</div>';
             $(echo).insertBefore($input);
             try {
                 if (src != history[0]) {
                     history.unshift(src);
                 }
                 result = eval(src);
-                output = '<div class="result"><span>&lt;</span> ' + result + '</div>';
+                output = '<div class="chibi chibi-result"><span>&lt;</span> ' + result + '</div>';
             }
             catch (error) {
-                output = '<div class="error"> ' + error + '</div>';
+                output = '<div class="chibi chibi-error"> ' + error + '</div>';
             }
             $(output).insertBefore($input);
             $cmd.text('');

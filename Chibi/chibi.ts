@@ -1,9 +1,9 @@
 ﻿$(function () {
     var ENTER = 13, UP = 38, DOWN = 40;
 
-    var $console = $('#console'),
-        $input = $('#input'),
-        $cmd = $('#cmd'),
+    var $console = $('#chibi-console'),
+        $input = $('#chibi-console > div.input'),
+        $cmd = $('#chibi-console > div.input > div.cmd'),
         history = [],
         i = -1;
 
@@ -34,7 +34,7 @@
         }
 
         if (event.which === ENTER) {
-            source = this.innerHTML.substr(prompt.length)
+            source = this.innerHTML.substr(prompt.length);
             echo = '<div class="echo"><span>&gt;</span> ' + source + '</div>';
 
             $(echo).insertBefore($input);
@@ -44,7 +44,7 @@
                 output = '<div class="result"><span>&lt;</span> ' + result + '</div>';
             }
             catch (error) {
-                output = '<div class="error">' + error + '</div>';
+                output = '<div class="error"> ' + error + '</div>';
             }
 
             $(output).insertBefore($input);

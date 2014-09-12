@@ -1,23 +1,27 @@
-﻿#console {
+﻿#chibi-console {
     font-family: Consolas, Monaco, monospace;
 }
 
-    #console > div {
+    #chibi-console > div {
         border-top: 1px solid #dedede;
         padding-top: 4px;
         padding-bottom: 4px;
     }
 
-        #console > div.echo {
+        #chibi-console > div.echo {
             color: #8e8e8e;
             font-style: italic;
         }
 
-        #console > div.result {
+        #chibi-console > div.result {
             color: #0094ff;
         }
 
-        #console > div.error {
+        #chibi-console > div.error {
             color: #ff0000;
             font-weight: bold;
+        }
+
+        #chibi-console > div.input > div.prompt {
+            float: left;
         }

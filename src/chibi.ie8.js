@@ -11,35 +11,54 @@
         var history = [],
             i = -1;
 
-        $prompt = $('<div>').addClass('chibi chibi-prompt')
+        $prompt = $('<div class="chibi chibi-prompt">')
             .css('float', 'left')
-                   .append('&gt;&nbsp');
+            .append('&gt;&nbsp');
 
-        $cmd = $('<div>').addClass('chibi chibi-command')
+        $cmd = $('<div class="chibi chibi-command">')
             .attr('contenteditable', 'true');
 
-        $input = $('<div>').addClass('chibi chibi-input')
+        $input = $('<div class="chibi chibi-input">')
             .append($prompt)
             .append($cmd);
 
+        function write(output) {
+            $(output)
+                .insertBefore($input)
+                .get(0)
+                .scrollIntoView(true);
+        }
+
+        function fmtEcho(s) {
+            return '<div class="chibi chibi-echo"><span>&gt;</span> ' + s + '</div>';
+        }
+
+        function fmtResult(r) {
+            return '<div class="chibi chibi-result"><span>&lt;</span> ' + r + '</div>';
+        }
+
+        function fmtError(e) {
+            return '<div class="chibi chibi-error"> ' + e + '</div>';
+        }
+
         function onEnter(event) {
-            var src, result, echo, $rprompt, output;
+            var src, result, echo, output;
             event.preventDefault();
             // We *have* to get `innerText` explicitly here
             src = $cmd.get(0).innerText;
-            echo = '<div class="chibi chibi-echo"><span>&gt;</span> ' + src + '</div>';
+            echo = fmtEcho(src);
             $(echo).insertBefore($input);
             try {
                 if (src != history[0]) {
                     history.unshift(src);
                 }
                 result = eval(src);
-                output = '<div class="chibi chibi-result"><span>&lt;</span> ' + result + '</div>';
+                output = fmtResult(result);
             }
             catch (error) {
-                output = '<div class="chibi chibi-error"> ' + error + '</div>';
+                output = fmtError(error);
             }
-            $(output).insertBefore($input);
+            write(output);
             $cmd.text('');
         }
 
@@ -80,6 +99,8 @@
             }
         });
 
+        // Now that we are fully setup we can inject into the DOM.
         $(this).append($input);
+        $cmd.focus();
     };
 }(jQuery));

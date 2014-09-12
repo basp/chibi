@@ -39,7 +39,10 @@
 
             $(echo).insertBefore($input);
             try {
-                history.unshift(source);
+                if (source != history[0]) {
+                    history.unshift(source);
+                }
+
                 result = eval(source);
                 output = '<div class="result"><span>&lt;</span> ' + result + '</div>';
             }
@@ -49,6 +52,7 @@
 
             $(output).insertBefore($input);
             this.innerHTML = '';
+            this.scrollIntoView(true);
             event.preventDefault();
         }
     });

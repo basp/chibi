@@ -8,19 +8,16 @@
         padding-bottom: 4px;
     }
 
-#input {
-}
+        #console > div.echo {
+            color: #8e8e8e;
+            font-style: italic;
+        }
 
-#console > div.echo {
-    color: #8e8e8e;
-    font-style: italic;
-}
+        #console > div.result {
+            color: #0094ff;
+        }
 
-#console > div.result {
-    color: #0094ff;
-}
-
-#console > div.error {
-    color: #ff0000;
-    font-weight: bold;
-}
+        #console > div.error {
+            color: #ff0000;
+            font-weight: bold;
+        }

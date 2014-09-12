@@ -1,11 +1,7 @@
 ﻿$(function () {
     var ENTER = 13, UP = 38, DOWN = 40;
 
-    var $console = $('#console'),
-        $input = $('#input'),
-        $cmd = $('#cmd'),
-        history = [],
-        i = -1;
+    var $console = $('#console'), $input = $('#input'), $cmd = $('#cmd'), history = [], i = -1;
 
     $cmd.keydown(function (event) {
         var source, echo, output, result;
@@ -26,24 +22,22 @@
             }
             if (i >= 0) {
                 this.innerHTML = history[i];
-            }
-            else {
+            } else {
                 this.innerHTML = '';
             }
             return;
         }
 
         if (event.which === ENTER) {
-            source = this.innerHTML.substr(prompt.length)
+            source = this.innerHTML.substr(prompt.length);
             echo = '<div class="echo"><span>&gt;</span> ' + source + '</div>';
 
             $(echo).insertBefore($input);
-            try {
+            try  {
                 history.unshift(source);
                 result = eval(source);
                 output = '<div class="result"><span>&lt;</span> ' + result + '</div>';
-            }
-            catch (error) {
+            } catch (error) {
                 output = '<div class="error">' + error + '</div>';
             }
 
@@ -52,4 +46,5 @@
             event.preventDefault();
         }
     });
-}); 
+});
+//# sourceMappingURL=chibi.js.map

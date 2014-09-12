@@ -22,11 +22,16 @@
             .append($prompt)
             .append($cmd);
 
+        if(action === 'write') {
+            var output = fmtEcho(arguments[1]);
+            write(output);
+            return this;
+        }
+
         function write(output) {
-            $(output)
-                .insertBefore($input)
-                .get(0)
-                .scrollIntoView(true);
+            var out = $(output).insertBefore($input);
+            out.get(0).scrollIntoView(true);
+            return this;
         }
 
         function fmtEcho(s) {
@@ -99,8 +104,9 @@
             }
         });
 
-        // Now that we are fully setup we can inject into the DOM.
+        // Now that we are fully setup, we can inject ourselves into the DOM.
         $(this).append($input);
         $cmd.focus();
+        return this;
     };
 }(jQuery));

@@ -1,6 +1,6 @@
 Chibi
 =====
-This is a tiny JQuery script that will inject a JavaScript REPL into 
+This is a tiny jQuery script that will inject a JavaScript REPL into
 your DOM. It behaves like the Google Chrome console but this will operate
 right into your page. 
 

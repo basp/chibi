@@ -77,7 +77,6 @@
                 i += 1;
                 $cmd.text(history[i]);
             }
-            return;
         }
 
         function onDown(event) {
@@ -91,7 +90,6 @@
             else {
                 $cmd.text('');
             }
-            return;
         }
 
         $cmd.keydown(function (event) {
@@ -108,7 +106,6 @@
             }
         });
 
-        // Now that we are fully setup, we can inject ourselves into the DOM.
         $(this).append($input);
         $cmd.focus();
         return this;

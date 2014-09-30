@@ -78,6 +78,7 @@
             catch (error) {
                 output = fmtError(error);
             }
+            i = -1;
             write(output);
             $cmd.text('');
         }

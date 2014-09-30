@@ -1,29 +1,29 @@
 (function ($) {
+    var ENTER = 13,
+        UP = 38,
+        DOWN = 40;
+
+    var $prompt,
+        $cmd,
+        $input;
+
+    var history = [],
+        i = -1;
+
+    $prompt = $('<div class="chibi chibi-prompt">')
+        .css('float', 'left')
+        .append('&gt;&nbsp');
+
+    $cmd = $('<div class="chibi chibi-command">')
+        .attr('contenteditable', 'true');
+
+    $input = $('<div class="chibi chibi-input">')
+        .append($prompt)
+        .append($cmd);
+
     $.fn.chibi = function (action) {
-        var ENTER = 13,
-            UP = 38,
-            DOWN = 40;
-
-        var $prompt,
-            $cmd,
-            $input;
-
-        var history = [],
-            i = -1;
-
-        $prompt = $('<div class="chibi chibi-prompt">')
-            .css('float', 'left')
-            .append('&gt;&nbsp');
-
-        $cmd = $('<div class="chibi chibi-command">')
-            .attr('contenteditable', 'true');
-
-        $input = $('<div class="chibi chibi-input">')
-            .append($prompt)
-            .append($cmd);
-
-        if(action === 'write') {
-            var output = fmtEcho(arguments[1]);
+        if(action === 'log') {
+            var output = fmtLog(arguments[1]);
             write(output);
             return this;
         }
@@ -32,6 +32,10 @@
             var out = $(output).insertBefore($input);
             out.get(0).scrollIntoView(true);
             return this;
+        }
+
+        function fmtLog(s) {
+            return '<div class="chibi chibi-log">' + s + '</div>';
         }
 
         function fmtEcho(s) {

@@ -34,6 +34,11 @@
             return this;
         }
 
+        if (action === 'clear') {
+            $(this).children('.chibi-msg').remove();
+            return this;
+        }
+
         function write(output) {
             var out = $(output).insertBefore($input);
             out.get(0).scrollIntoView(true);

@@ -40,6 +40,8 @@ Finally, you can clear the console with the `clear` action:
         $('#console').chibi('clear');
     </script>
 
+Oh yeah, you might wanna include `chibi.css` too for some basic styling.
+
 TODO
 ====
 * Support more than one console in the DOM

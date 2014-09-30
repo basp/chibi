@@ -34,15 +34,19 @@ with the `info` and `error` actions:
         $('#console').chibi('error', 'error message');
     </script>
 
-Finally, you can clear the console with the `clear` action:
+You can clear the console with the `clear` action:
 
     <script>
         $('#console').chibi('clear');
     </script>
+
+The console supports a rudimentary history feature with the up and down keys.
+It's not very smart yet: it will not duplicate the last command but that's basically it.
 
 Oh yeah, you might wanna include `chibi.css` too for some basic styling.
 
 TODO
 ====
 * Support more than one console in the DOM
+* More sensible history support
 * Configuration options

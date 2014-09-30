@@ -13,7 +13,7 @@ browser in mind. _Isn't 2014 great?_
 
 Usage
 =====
-Make sure you have __jQuery ~1.9.0__ and the Chibi script loaded. Then just
+Make sure you have jQuery 1.9 or higher and the Chibi script loaded. Then just
 create a `<div>` somewhere on your page to hold your console:
 
     <div id="console"></div>

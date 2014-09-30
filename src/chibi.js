@@ -22,8 +22,14 @@
         .append($cmd);
 
     $.fn.chibi = function (action) {
-        if(action === 'log') {
-            var output = fmtLog(arguments[1]);
+        if (action === 'info') {
+            var output = fmtInfo(arguments[1]);
+            write(output);
+            return this;
+        }
+
+        if (action === 'error') {
+            var output = fmtError(arguments[1]);
             write(output);
             return this;
         }
@@ -34,8 +40,8 @@
             return this;
         }
 
-        function fmtLog(s) {
-            return '<div class="chibi-msg chibi-log">' + s + '</div>';
+        function fmtInfo(s) {
+            return '<div class="chibi-msg chibi-info">' + s + '</div>';
         }
 
         function fmtEcho(s) {

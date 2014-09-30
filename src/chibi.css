@@ -1,38 +1,36 @@
-.chibi {
+.chibi-console {
     font-family: Consolas, Monaco, monospace;
+}
+
+.chibi-msg {
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 .chibi-error {
     color: red;
     font-weight: bold;
-    border-top: 1px solid #dedede;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
 
 .chibi-result {
     color: #0094ff;
-    border-top: 1px solid #dedede;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
 
 .chibi-log {
-    border-top: 1px solid #dedede;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
 
 .chibi-echo {
     color: #8e8e8e;
     font-style: italic;
-    border-top: 1px solid #dedede;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
 
 .chibi-input {
-    border-top: 1px solid #dedede;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.chibi-command {
+    outline: none;
+    margin-left: 16px;
 }

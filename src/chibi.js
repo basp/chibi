@@ -10,14 +10,14 @@
     var history = [],
         i = -1;
 
-    $prompt = $('<div class="chibi chibi-prompt">')
+    $prompt = $('<div class="chibi-prompt">')
         .css('float', 'left')
         .append('&gt;&nbsp');
 
-    $cmd = $('<div class="chibi chibi-command">')
+    $cmd = $('<div class="chibi-command">')
         .attr('contenteditable', 'true');
 
-    $input = $('<div class="chibi chibi-input">')
+    $input = $('<div class="chibi-input">')
         .append($prompt)
         .append($cmd);
 
@@ -35,19 +35,19 @@
         }
 
         function fmtLog(s) {
-            return '<div class="chibi chibi-log">' + s + '</div>';
+            return '<div class="chibi-msg chibi-log">' + s + '</div>';
         }
 
         function fmtEcho(s) {
-            return '<div class="chibi chibi-echo"><span>&gt;</span> ' + s + '</div>';
+            return '<div class="chibi-msg chibi-echo"><span>&gt;</span> ' + s + '</div>';
         }
 
         function fmtResult(r) {
-            return '<div class="chibi chibi-result"><span>&lt;</span> ' + r + '</div>';
+            return '<div class="chibi-msg chibi-result"><span>&lt;</span> ' + r + '</div>';
         }
 
         function fmtError(e) {
-            return '<div class="chibi chibi-error"> ' + e + '</div>';
+            return '<div class="chibi-msg chibi-error"> ' + e + '</div>';
         }
 
         function onEnter(event) {
@@ -106,7 +106,7 @@
             }
         });
 
-        $(this).append($input);
+        $(this).append($input).addClass('chibi-console');
         $cmd.focus();
         return this;
     };

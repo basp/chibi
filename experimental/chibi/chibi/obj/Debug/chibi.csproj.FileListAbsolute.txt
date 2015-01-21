@@ -1,0 +1,5 @@
+c:\dev\chibi\chibi\bin\chibi.dll.config
+c:\dev\chibi\chibi\bin\chibi.dll
+c:\dev\chibi\chibi\bin\chibi.pdb
+c:\dev\chibi\chibi\obj\Debug\chibi.dll
+c:\dev\chibi\chibi\obj\Debug\chibi.pdb
